@@ -18,7 +18,7 @@ class Reports extends REST_Controller
     public function drug_allergy_post(){
         
         $cid= $this->input->get('cid');
-        echo "CID:".$cid;
+        //echo "CID:".$cid;
         $r = $this->report_model->drug_allergy($cid);
         $this->response($r);
     }
