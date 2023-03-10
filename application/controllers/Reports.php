@@ -15,11 +15,14 @@ class Reports extends REST_Controller
         $this->load->model('report_model');
 
     }
-    public function drug_allergy_post(){
+    public function drug_allergy_get(){
         
         $cid= $this->input->get('cid');
         //echo "CID:".$cid;
-        $r = $this->report_model->drug_allergy($cid);
-        $this->response($r);
+        $rs = $this->report_model->drug_allergy($cid);
+   
+        
+
+        $this->response($rs,200);
     }
 }

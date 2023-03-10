@@ -9,14 +9,12 @@
  */
 class Report_model extends CI_Model
 {
+   
     public function drug_allergy($cid)
     {
-
-      
+        $hdc = $this->load->database('hdc', TRUE);
         $sql = "CAll getDrugAllergy(".$cid.")";
-        //echo $sql;
-        $rs = $this->db->query($sql)->result();
-        //echo $this->db->last_query();
+        $rs = $hdc->query($sql)->result();
         return $rs;
     }
 }
